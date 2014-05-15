@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="css/game.css" />
+	<title></title>
+	  <style type="text/css">
+            *{padding:0;margin:0;} body{font-size:13px;padding:10px;} p{margin:2px;}
+            .wrap{position:relative;width:580px;height:326px;margin:0 auto;border:1px
+            solid #ccc;margin-top:50px;} 
+			#fall{position:absolute;top:0;left:0;}
+        </style>
+</head>
+<body>
+<div id="warp">
+	<div id="stage">
+		<div id="man"></div>
+
+		 <h3>
+            模拟重力状态下的抛物运动（假使1px==1mm）
+        </h3>
+        <p>
+            横向初速度：
+            <input id="Vx" type="text" value="0.8" />
+            px/ms
+        </p>
+        <p>
+            纵向初速度：
+            <input id="Vy" type="text" value="-2" />
+            px/ms
+        </p>
+        <p>
+            重力加速度：
+            <input id="a" type="text" value="0.0098" />
+            px/平方ms
+        </p>
+        <p>
+            （如果这个加速度是一个随时间变化的值，就能达到其他非匀加速运动的效果了。）
+        </p>
+        <p>
+            单位时间：
+            <input id="t" type="text" value="2" />
+            （记录运动的时间间隔）
+            <p>
+                <input type="button" value="演示" onclick="demo(document.getElementById('Vx').value, document.getElementById('Vy').value, document.getElementById('a').value, document.getElementById('t').value)"
+                />
+            </p>
+			<p>
+            <strong>最好用chrome观看demo,你懂的...<br />
+			By <a href="http://nonb.cn">写点寂寞</a> @Author:Fzxa</strong>
+			</p>
+                <canvas id="ctx" width="580" height="326" style="border:1px solid #000;  margin-top:15px;">
+                   
+                </canvas>
+				<div id="fall">
+                       <img src="images/ling.png" style="position:absolute; left:20px; top:420px; width:45px "/>
+                </div>
+		
+	</div>
+</div>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/easeljs-0.7.1.min.js"></script>
+	<script type="text/javascript">
+
+	
+
+   function demo(x, y, a, t) {
+
+    var f = document.getElementById('fall');
+	/*
+    var Vx = x,
+    Vy = parseInt(y),
+    g = a,
+    t = parseInt(t),
+    h = 0,
+    l = 0,
+    Sx = 0,
+    Sy = 0;
+	*/
+	var Vx = x,
+    Vy = parseInt(y),
+    g = a,
+    t = parseInt(t),
+    h = 0,
+    l = 0,
+    Sx = 0,
+    Sy = 0;
+	console.log('Vx:'+Vx+' Vy:'+Vy+' g:'+g+' t:'+t+' h:'+h+' l:'+l+' Sx:'+Sx+' Sy:'+Sy); 
+    var i = setInterval(function() {
+        if (f) {
+            Sx += Vx * t;
+            l = Sx;
+            Vy += g * t;
+            h += Vy * t;
+			console.log('X轴:'+l+'    Y轴:'+h+'   Vy:'+Vy); 
+            f.style.left = l + 'px';
+            f.style.top = h-Vy + 'px';
+            if (h>=-2) {
+				Vy *= (Vy > 1) ? -0.6 : 0; 
+				Vx = Vx/1.5
+				if(Vy == 0) clearInterval(i);
+			}
+        }
+    },
+    t);
+}
+	</script>
+	
+</body>
+</html>
