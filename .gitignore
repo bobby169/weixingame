@@ -1,1 +1,5 @@
 /.idea/
+/node_modules/
+/Gruntfile.js
+/app.js
+/package.json
