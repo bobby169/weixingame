@@ -1,77 +1,37 @@
-
 <!doctype html>
-<html lang="en">
+<html lang="cn">
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<title>德国马牌轮胎【谁是传球王】</title>
-	<link rel="stylesheet" href="css/global.css" />
-	<link rel="stylesheet" href="css/index.css" />
-	<link rel="stylesheet" href="css/animate.css" />
-    <script type="text/javascript">
-    var _smq = _smq || [];
-    _smq.push(['_setAccount', '3dea9b9', new Date()]);
-    _smq.push(['pageview']);
-
-    (function() {
-    var sm = document.createElement('script'); sm.type = 'text/javascript'; sm.async = true;
-    sm.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdnmaster.com/sitemaster/sm.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sm, s);
-    })();
-    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="css/game.css"/>
+    <title>传令江湖-我去创江湖</title>
 </head>
 <body>
-	<div id="container">
-		<div id="header" class="clear">
-			<div class="logo left"><img class="max" src="images/logo.jpg" alt="" /></div>
-		</div>
-		<div id="main_default">
-			<div class="title">
-				<div class="title_img"><img class="max" src="images/title.png" alt="" /></div>
-				<div class="title_text_weixin">
-					<p class="default_text">关注<span class="yellow">德国马牌轮胎</span>官方微信</p>
-					<p class="default_text">开足脚力,传球得分,<span class="yellow">去巴西看世界杯！</span></p>
-				</div>
-			</div>
-
-			<div class="fifa">
-				<img class="max" src="images/win_fifa.png" alt="" />
-				<div class="fifa_list clear">
-					<p class="fl_left left">Step1</p>
-					<p class="fl_right right">微信查找公众号“<span class="yellow">德国马牌轮胎</span>” 点击关注</p>
-				</div>
-				<div class="fifa_list clear">
-					<p class="fl_left left">Step2</p>
-					<p class="fl_right right">进入德国马牌轮胎微信账号，点击页面右下角<span class="yellow">【微活动】-【球神争霸赛】</span></p>
-				</div>
-				<div class="fifa_list clear">
-					<p class="fl_left left">Step3</p>
-					<p class="fl_right right">传球积分，0元秒兑大奖，<span class="yellow">让德国马牌送你去巴西看世界杯！</span></p>
-				</div>
-			</div>
-			
-		</div>
-
-	</div>
-
-	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript" src="js/swipe.js"></script>
-	<script type="text/javascript">
-
-		function autoScroll(obj) { 
-		    $(obj).find("ul:first").animate({ 
-		        marginTop : "-1em" 
-		    },500,function(){
-		        $(this).fadeIn().css({marginTop : "0em"}).find("li:first").appendTo(this); 
-		    }) 
-		}
-
-		$(function() {
-			window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
-    		setInterval('autoScroll(".scroll")',3000);
-
-		})
-	</script>
-	
+<div id="wrap">
+    <div id="stage">
+        <div id="bg"></div>
+        <div id="man"></div>
+        <div id="shadow"></div>
+        <div id="light"></div>
+        <div id="ling">
+            <div id="lingimg">
+                <img  src="images/ling.png"/>
+            </div>
+        </div>
+    </div>
+    <div id="text1"></div>
+    <div id="text2">运足内力，<span>传令得分</span>，分分有礼！<a>活动规则</a></div>
+    <div id="progressbar">
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+    </div>
+    <div id="score"><strong>0</strong>米</div>
+    <div id="powerbg"></div>
+    <div id="start"></div>
+    <button id="send" style="position: absolute; bottom: 0; left: 0; display:none">开始</button>
+    <div id="logo"><img src="images/logo.png" /> </div>
+</div>
+<script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>
