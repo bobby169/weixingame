@@ -34,7 +34,6 @@ Game.prototype = {
             me.elem.powerbg.style.display = "block";
             me.progress();
             me.initShake();
-            light.animationStop();
         };
         this.elem.send.onclick = function () {
             me.fireStart();
